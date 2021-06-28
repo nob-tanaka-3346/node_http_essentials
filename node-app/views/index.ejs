@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div><a href="/add">新規作成</a></div>
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Issued by</th>
+          <th>Code</th>
+          <th></th>
+          <th></th>
+        </tr>
+      <% for(var i in content){ %>
+        <tr>
+            <% var obj = content[i]; %>
+            <td><%= obj.certification_id %></td>
+            <td><%= obj.certification_name_en %></td>
+            <td><%= obj.issued_by %></td>
+            <td><%= obj.certification_code %></td>
+            <td>
+              <form action="/edit" method="get">
+                <input type="hidden" name="id" value="<%= obj.id %>">
+                <input type="submit" value="更新">
+            </form>
+            </td>
+            <td>
+              <form action="/delete" method="get">
+                <input type="hidden" name="id" value="<%= obj.id %>">
+                <input type="submit" value="削除">
+              </form>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+  </body>
+</html>
