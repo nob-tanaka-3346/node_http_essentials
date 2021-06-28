@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <div><a href="/add">新規作成</a></div>
+    <div><a href="/add">New Record</a></div>
     <table>
         <tr>
           <th>Id</th>
@@ -34,13 +34,13 @@
             <td>
               <form action="/edit" method="get">
                 <input type="hidden" name="id" value="<%= obj.id %>">
-                <input type="submit" value="更新">
+                <input type="submit" value="Update">
             </form>
             </td>
             <td>
               <form action="/delete" method="get">
                 <input type="hidden" name="id" value="<%= obj.id %>">
-                <input type="submit" value="削除">
+                <input type="submit" value="Delete">
               </form>
             </td>
         </tr>
