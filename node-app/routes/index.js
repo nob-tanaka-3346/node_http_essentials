@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { Connection, Request } = require("tedious");
 
+/*
 const config = {
   authentication: {
     options: {
@@ -16,6 +17,21 @@ const config = {
     encrypt: true
   }
 };
+*/
+ 
+    //Use Azure App Service Managed Identity to connect to the SQL database
+const connection = new Connection({
+  server: process.env["db_server"],
+  authentication: {
+    type: 'azure-active-directory-msi-app-service',
+  },
+  options: {
+    database: process.env["db_database"],
+    encrypt: true,
+    port: 1433
+  }
+});
+
 
 //GETアクセスの処理
 router.get('/', function (req, res, next) {
