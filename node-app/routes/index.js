@@ -18,25 +18,26 @@ const config = {
   }
 };
 */
- 
-    //Use Azure App Service Managed Identity to connect to the SQL database
-const connection = new Connection({
-  server: process.env["db_server"],
-  authentication: {
-    type: 'azure-active-directory-msi-app-service',
-  },
-  options: {
-    database: process.env["db_database"],
-    encrypt: true,
-    port: 1433
-  }
-});
-
 
 //GETアクセスの処理
 router.get('/', function (req, res, next) {
 
-  const connection = new Connection(config);
+//  const connection = new Connection(config);
+
+//Use Azure App Service Managed Identity to connect to the SQL database
+
+  const connection = new Connection({
+    server: process.env["db_server"],
+    authentication: {
+      type: 'azure-active-directory-msi-app-service',
+    },
+    options: {
+      database: process.env["db_database"],
+      encrypt: true,
+      port: 1433
+    }
+  });
+
   var content = [];
 
   // Attempt to connect and execute queries if connection goes through
