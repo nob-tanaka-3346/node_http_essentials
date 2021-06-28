@@ -10,9 +10,13 @@
     <table>
         <tr>
           <th>Id</th>
-          <th>Name</th>
           <th>Issued by</th>
           <th>Code</th>
+          <th>Name</th>
+          <th>By Technology</th>
+          <th>By Role</th>
+          <th>Cretaed</th>
+          <th>Last Updated</th>
           <th></th>
           <th></th>
         </tr>
@@ -20,9 +24,13 @@
         <tr>
             <% var obj = content[i]; %>
             <td><%= obj.certification_id %></td>
-            <td><%= obj.certification_name_en %></td>
             <td><%= obj.issued_by %></td>
             <td><%= obj.certification_code %></td>
+            <td><%= obj.certification_name_en %></td>
+            <td><%= obj.by_technology %></td>
+            <td><%= obj.by_role %></td>
+            <td><%= obj.sys_created_dt %></td>
+            <td><%= obj.sts_updated_dt %></td>
             <td>
               <form action="/edit" method="get">
                 <input type="hidden" name="id" value="<%= obj.id %>">
