@@ -3,6 +3,5 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/b510db83-4580-40de-9093-1f79d22ec8de/resourceGroups/web-app-demo/providers/Microsoft.Web/sites/web-app-cto-data-model-6735"
+    ]
 }
