@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 const { Connection, Request } = require("tedious");
 
-
+//user/idでの認証の場合はここでconfigを設定
 
 //GETアクセスの処理
 router.get('/', function (req, res, next) {
 
-//  const connection = new Connection(config);
+//user/idでの認証の場合
+  //  const connection = new Connection(config);
 
 //Use Azure App Service Managed Identity to connect to the SQL database
 
@@ -46,7 +47,7 @@ router.get('/', function (req, res, next) {
   
     // Read all rows from table
     const request = new Request(
-      `SELECT * FROM [Certification]`,
+      `select * from [trprivate].[certification]`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);
