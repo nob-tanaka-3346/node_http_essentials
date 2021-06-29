@@ -2,22 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { Connection, Request } = require("tedious");
 
-/*
-const config = {
-  authentication: {
-    options: {
-      userName: "nobtanaka3346",
-      password: "7188!Z5U2hPKn"
-    },
-    type: "default"
-  },
-  server: "sqlsrvr-2345.database.windows.net",
-  options: {
-    database: "sqldb-2345",
-    encrypt: true
-  }
-};
-*/
+
 
 //GETアクセスの処理
 router.get('/', function (req, res, next) {
