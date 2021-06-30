@@ -42,8 +42,8 @@ router.get('/', function (req, res, next) {
   
     // Read all rows from table
     const request = new Request(
-//      `SELECT * FROM [Certification]`,  //  for local env.
-      `SELECT * FROM [trprivate].[certification]`,
+      `SELECT * FROM [Certification]`,  //  for my env.
+//      `SELECT * FROM [trprivate].[certification]`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);
